@@ -1,0 +1,449 @@
+ <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="#page-top">EstofaCare</a>
+                <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Serviços</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">Sobre</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contate-nos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Selecione o botão de alternância do menu
+    var navbarToggler = document.querySelector('.navbar-toggler');
+
+    // Selecione o menu responsivo
+    var navbarResponsive = document.querySelector("#navbarResponsive");
+
+    // Função para fechar o menu
+    function closeNavbar() {
+        navbarResponsive.classList.remove("show");
+    }
+
+    // Adicione um ouvinte de evento de clique ao botão de alternância do menu
+    navbarToggler.addEventListener("click", function() {
+        // Se o menu estiver aberto, feche-o; se estiver fechado, abra-o
+        var isOpen = navbarResponsive.classList.contains("show");
+        if (isOpen) {
+            closeNavbar();
+        } else {
+            navbarResponsive.classList.add("show");
+        }
+    });
+
+    // Selecione todos os itens de menu
+    var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+    // Adicione um ouvinte de evento de clique a cada item de menu
+    navLinks.forEach(function(navLink) {
+        navLink.addEventListener("click", function(event) {
+            // Impedir o comportamento padrão do link (navegação)
+            event.preventDefault();
+
+            // Obter o href do link clicado
+            var targetId = this.getAttribute("href").substring(1);
+
+            // Selecione o elemento de destino
+            var targetElement = document.getElementById(targetId);
+
+            // Role a página para o elemento de destino usando o método scrollIntoView
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: "smooth" // role suavemente para o elemento
+                });
+            }
+
+            // Feche o menu após clicar em uma opção
+            closeNavbar();
+        });
+    });
+});
+
+        </script>
+        <!-- Masthead-->
+        <header class="masthead bg-primary text-white text-center banner">
+            <div class="container d-flex align-items-center flex-column">
+                <!-- Masthead Avatar Image-->
+
+                <!-- Masthead Heading-->
+                <h1 class="masthead-heading text-uppercase mb-0">EstofaCare</h1>
+                <%= link_to "https://api.whatsapp.com/send?phone=5511912222572", class: "btn btn-xl btn-outline-light mt-4", target: "_blank" do %>
+                  <i class="fab fa-whatsapp me-2"></i>
+                  Orçamento via WhatsApp!
+                <% end %>
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Masthead Subheading-->
+                <p class="masthead-subheading font-weight-light mb-0">Limpeza - Impermeabilização - Remoção de bacterias</p>
+            </div>
+        </header>
+        <!-- Portfolio Section-->
+        <section class="page-section portfolio" id="portfolio">
+            <div class="container">
+                <!-- Portfolio Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Serviços</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Portfolio Grid Items-->
+                <div class="row justify-content-center">
+                    <!-- Portfolio Item 1-->
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <%= image_tag "limpeza.jpg", class: "img-fluid", style: "height: 220px;", alt: "Impermeabilização" %>
+                        </div>
+                    </div>
+
+                    <!-- Portfolio Item 2-->
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <%= image_tag "imper.jpg", cclass: "img-fluid", style: " height: 220px;", alt: "Impermeabilização" %>
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 3-->
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                             <%= image_tag "cochão.jpg", class: "img-fluid", style: "height: 220px;", alt: "Impermeabilização" %>
+
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 4-->
+
+                </div>
+            </div>
+        </section>
+        <!-- About Section-->
+        <section class="page-section bg-primary text-white mb-0" id="about">
+            <div class="container">
+                <!-- About Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-white">Sobre</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- About Section Content-->
+                <div class="row">
+                    <div class="col-lg-4 ms-auto"><p class="lead">Na EstofaCare, nossa missão é proporcionar serviços excepcionais de limpeza, higienização e impermeabilização de estofados, com foco na felicidade e confiança dos nossos clientes. Acreditamos que um ambiente limpo e acolhedor é essencial para o bem-estar e a qualidade de vida, e estamos comprometidos em oferecer soluções que atendam às necessidades únicas de cada cliente.</p></div>
+                    <div class="col-lg-4 me-auto"><p class="lead">Nossa visão é ser reconhecidos como líderes no setor, oferecendo não apenas serviços de alta qualidade, mas também uma experiência excepcional do cliente. Valorizamos a honestidade, a transparência e a dedicação em tudo o que fazemos, e buscamos constantemente superar as expectativas dos nossos clientes.</p></div>
+                    <div class="col-lg-4 me-auto"><p class="lead">Na EstofaCare, não apenas limpamos estofados; criamos ambientes limpos, saudáveis e confortáveis que promovem o bem-estar e a felicidade de nossos clientes.</p></div>
+                </div>
+                <!-- About Section Button-->
+                <div class="text-center mt-4">
+                  <%= link_to "https://api.whatsapp.com/send?phone=5511912222572", class: "btn btn-xl btn-outline-light mt-4", target: "_blank" do %>
+                    <i class="fas fa-download me-2"></i>
+                    Orçamento via WhatsApp!
+                  <% end %>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Section-->
+        <section class="page-section" id="contact">
+            <div class="container">
+                <!-- Contact Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contate-nos : Orçamento via ligação ou email </h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Contact Section Form-->
+               <div class="row justify-content-center">
+    <div class="col-lg-8 col-xl-7">
+        <%= form_with(model: @lead, url: leads_path, id: "contactForm", class: "mb-3") do |form| %>
+            <!-- Name input-->
+            <div class="form-floating mb-3">
+                <%= form.text_field :nome, class: "form-control", id: "name", placeholder: "Enter your name...", required: true %>
+                <%= form.label :nome, "Nome Completo" %>
+                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+            </div>
+            <!-- Email address input-->
+            <div class="form-floating mb-3">
+                <%= form.email_field :email, class: "form-control", id: "email", placeholder: "name@example.com", required: true %>
+                <%= form.label :email, "Email" %>
+                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+            </div>
+            <!-- Phone number input-->
+            <div class="form-floating mb-3">
+  <%= form.telephone_field :telefone, class: "form-control", id: "phone", placeholder: "(123) 456-7890", required: true %>
+  <%= form.label :telefone, "Telefone" %>
+  <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+</div>
+
+            <!-- Message input-->
+            <div class="form-floating mb-3">
+                <%= form.text_area :mensagem, class: "form-control", id: "message", placeholder: "Enter your message here...", style: "height: 10rem", required: true %>
+                <%= form.label :mensagem, "Mensagem" %>
+                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+            </div>
+            <!-- Submit Button-->
+            <%= form.submit "Enviar", class: "btn btn-primary btn-xl", id: "submitButton" %>
+        <% end %>
+    </div>
+</div>
+
+        </section>
+        <!-- Footer-->
+        <footer class="footer text-center">
+            <div class="container">
+                <div class="row">
+                    <!-- Footer Location-->
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4">Localização</h4>
+                        <p class="lead mb-0">
+                          <i class="fa-solid fa-location-dot"></i>  Guarulhos-SP
+                            <br />
+                        </p>
+                    </div>
+                    <!-- Footer Social Icons-->
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4">Around the Web</h4>
+                      <%= link_to "#", class: "btn btn-outline-light btn-social mx-1" do %>
+                        <i class="fab fa-fw fa-facebook-f"></i>
+                      <% end %>
+
+                      <%= link_to "#", class: "btn btn-outline-light btn-social mx-1" do %>
+                        <i class="fab fa-instagram"></i>
+                      <% end %>
+
+                      <%= link_to "#", class: "btn btn-outline-light btn-social mx-1" do %>
+                        <i class="fab fa-tiktok"></i>
+                      <% end %>
+                    </div>
+                    <!-- Footer About Text-->
+
+                </div>
+            </div>
+        </footer>
+        <!-- Copyright Section-->
+        <div class="copyright py-4 text-center text-white">
+            <div class="container"><small>Copyright &copy; Your Website 2023</small></div>
+        </div>
+        <!-- Portfolio Modals-->
+        <!-- Portfolio Modal 1-->
+        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Limpeza e Higenização de Sofa</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <%# <img class="img-fluid rounded mb-5" src="assets/img/portfolio/cabin.png" alt="..." /> %>
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4">Oferecemos serviços profissionais de limpeza e higienização de sofás para garantir um ambiente limpo e saudável em sua casa ou escritório. Nossos especialistas utilizam técnicas avançadas e produtos de qualidade para remover manchas, sujeira e ácaros, deixando seu sofá revitalizado e livre de germes. Mantenha seu espaço confortável e seguro para toda a família com nossos serviços de limpeza de sofá. Entre em contato conosco para saber mais!</p>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                       Sair
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 2-->
+        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" aria-labelledby="portfolioModal2" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Impermeabilização de Estofados </h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <%# <img class="img-fluid rounded mb-5" src="assets/img/portfolio/cake.png" alt="..." />
+                                    <!-- Portfolio Modal - Text--> %>
+                                    <p class="mb-4">Proteja seus estofados contra derramamentos acidentais e manchas indesejadas com nosso serviço profissional de impermeabilização de estofados. Utilizamos produtos de alta qualidade que formam uma barreira protetora invisível, impedindo a absorção de líquidos e sujeira. Com a impermeabilização adequada, você prolonga a vida útil do seu estofado, mantendo-o limpo e preservado por mais tempo. Garanta tranquilidade e praticidade para sua casa ou escritório com nosso serviço de impermeabilização de estofados. Entre em contato conosco hoje mesmo para agendar uma consulta!</p>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Sair
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 3-->
+        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" aria-labelledby="portfolioModal3" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Limpeza de Colchões</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <%# <img class="img-fluid rounded mb-5" src="assets/img/portfolio/circus.png" alt="..." /> %>
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4">Proporcione conforto e bem-estar para suas noites de sono com nosso serviço especializado de limpeza de colchões. Com o tempo, os colchões acumulam ácaros, poeira, suor e outras impurezas que podem prejudicar a qualidade do seu sono e até mesmo causar problemas de saúde. Nossa equipe utiliza técnicas avançadas e produtos de limpeza eficazes para remover profundamente as sujeiras e os alérgenos, deixando seu colchão fresco, limpo e livre de odores indesejados. Garantimos uma limpeza completa e segura, preservando a integridade do tecido e proporcionando um ambiente mais saudável para você e sua família. Aproveite noites tranquilas e revigorantes com nosso serviço de limpeza de colchões. Entre em contato conosco para saber mais e agendar uma limpeza profunda para o seu colchão hoje mesmo!</p>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Sair
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 4-->
+        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" aria-labelledby="portfolioModal4" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Controller</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/game.png" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 5-->
+        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" aria-labelledby="portfolioModal5" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Locked Safe</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/safe.png" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 6-->
+        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" aria-labelledby="portfolioModal6" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Submarine</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/submarine.png" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
