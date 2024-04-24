@@ -1,6 +1,10 @@
  <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="#page-top">EstofaCare</a>
+              <%= link_to root_path do %>
+                <%= image_tag "logo3.png", class: "navbar-logo"  %>
+              <% end %>
+                <%# <a class="navbar-brand" href="#page-top">EstofaCare</a>
+                <img src="" alt=""> %>
                 <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
@@ -210,7 +214,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         </section>
         <!-- Footer-->
-        <footer class="footer text-center">
+        <footer class="footer text-center ">
             <div class="container">
                 <div class="row">
                     <!-- Footer Location-->
@@ -218,12 +222,23 @@ document.addEventListener("DOMContentLoaded", function() {
                         <h4 class="text-uppercase mb-4">Localização</h4>
                         <p class="lead mb-0">
                           <i class="fa-solid fa-location-dot"></i>  Guarulhos-SP
+                          <br />
+                             <i class="fa-solid fa-location-dot"></i>  São Paulo -SP
+                             <br />
+                             <i class="fa-solid fa-location-dot"></i>  Ibiuna-SP
+                        </p>
+                    </div>
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4">Contato</h4>
+                        <p class="lead mb-0">
+                          <i class="fa-solid fa-phone"></i> / <i class="fa-brands fa-whatsapp"></i>  11- 91222-2572
                             <br />
+                          <i class="fa-solid fa-envelope"></i> felipesayegg@icloud.com
                         </p>
                     </div>
                     <!-- Footer Social Icons-->
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Around the Web</h4>
+                    <div class="col-lg-4 mb-5 mb-lg-0 ">
+                        <h4 class="text-uppercase mb-4">Siga-nos</h4>
                       <%= link_to "#", class: "btn btn-outline-light btn-social mx-1" do %>
                         <i class="fab fa-fw fa-facebook-f"></i>
                       <% end %>
