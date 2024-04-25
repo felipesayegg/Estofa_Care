@@ -11079,3 +11079,16 @@ html {
   width: 100px;
 
 }
+
+
+.whatsapp-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.whatsapp-btn a img {
+  width: 60px; /* Ajuste o tamanho conforme necessário */
+  height: auto;
+}
