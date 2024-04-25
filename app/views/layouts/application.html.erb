@@ -8,10 +8,15 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-    
+
   </head>
 
   <body>
+    <div class="whatsapp-btn">
+  <%=  link_to "https://api.whatsapp.com/send?phone=5511912222572", target: "_blank" do %>
+    <%= image_tag "whatsapp.png", alt: "WhatsApp" %>
+  <% end %>
+</div>
     <%= yield %>
   </body>
 </html>
