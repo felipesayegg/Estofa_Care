@@ -11060,13 +11060,22 @@ html {
 }
 
 .banner {
-  background-image: url("limpeza2.jpeg");
+  background-image: url("limpeza2.png");
   background-size: cover;
-  background-position: center;
+  background-position: left;
   height: 650px;
   width: 100%;
 
 }
+
+@media (max-width: 768px) {
+  .banner {
+    background-size: auto 100%; /* Volte para o tamanho automático para evitar duplicação */
+    background-position:: 25% center;
+    height: auto;/* Ajuste a posição da imagem para a direita */
+  }
+}
+
 
 
 .footer1{
